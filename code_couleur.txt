@@ -1,0 +1,24 @@
+code couleur jaune :
+rouge:246 : F6
+vert:247 : F7
+bleu:32 : 20
+
+code couleur noir :
+rouge:27
+vert:27
+bleu:27
+
+code couleur bleu clair :
+rouge:1c
+vert:68
+bleu:bd
+
+code couleur bleu foncé:
+rouge:05
+vert:9b
+bleu:d2
+
+code couleur orange :
+rouge:221 : dd
+vert:111 : 6f
+bleu:0 : 00

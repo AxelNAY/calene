@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CALENE AGEN</title>
+    <meta name="viewport" content="initial-scale=1.0 , user-scalable=no">
+    <meta charset="utf-8">
+    
+	<link rel="stylesheet" href="../leaflet/leaflet.css"/>
+
+	<script src="../leaflet/leaflet.js"> </script>
+	<script src="../jquery/jquery-3.2.1.js"> </script>
+	
+<!--  <button id="bouton"> Pour des tests</button> -->
+ 
+   
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 90%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+    
+  </head>
+  <body>
+	<!DOCTYPE html>
+<html>
+  <head>
+    <title>CALENE Menu principal</title>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="css/menu.css"/>
+  </head>
+
+  <body>
+	<ul id="menu">
+	        <li><a href="http://v1.association-calene.fr/index.php">Home</a></li>
+	        <li>
+	                <a href="#">Gestion</a>
+	                <ul>
+	                        <li><a href="test_js.php">mise à jour dernière valeur</a></li>
+	                        <li><a href="messages.php">Changer le message au pilote</a></li>
+	                </ul>
+	        </li>
+	        <li>
+	                <a href="#">Affichages instantannés</a>
+	                <ul>
+	                        <li><a href="vitesse.php">Vitesse</a></li>
+	                        <li><a href="courant_live.php">Courants</a></li>
+	                        <li><a href="tension_live.php">Tensions</a></li>
+	                        <li><a href="tension_courant_live">Courants et tensions</a></li>
+	                </ul>
+	        </li>
+	        <li><a href="#">Graphiques</a>
+	                <ul>
+	                        <li><a href="#">Vitesse</a></li>
+	                        <li><a href="courant_graph_highstock.php">Courants</a></li>
+	                        <li><a href="#">Tensions</a></li>
+	                </ul>
+			</li>	                
+	        <li>
+	        		<a href="#">Cartes</a>
+	                <ul>
+				        <li><a href="carte_AGEN.php">Cartes de la piste d'AGEN</a></li>
+				        <li><a href="carte_CHARTRES.php">Cartes de la course à Chartres</a></li>
+				        <li><a href="plan.php">Plan du circuit</a></li>
+				        <li><a href="circuit.php">Mesure du circuit</a></li>
+	                </ul>
+			</li>
+	        <li><a href="todo.php">Contact</a></li>
+	  </ul>
+	</body>    <div id="map"></div>
+    <script src="../leaflet-color-markers.js"> </script>
+<!--      // blueIcon  redIcon  greenIcon  orangeIcon  yellowIcon  violetIcon  greyIcon  blackIcon -->
+
+    <script src="../markers.js"> </script>
+
+
+    <script>
+
+      var indice = 0 ;
+
+
+        //-----------------------------------------------------------------------------
+        // récupère la lattitude et la logitude
+        // par une requête ajax sur le fichier latt_long.php
+        // qui retourne une valeur formatée en json
+        // exemple : [[44.4108],[0.3703]]
+        //-----------------------------------------------------------------------------
+        function requestDatacalene() {
+            $.ajax({
+//                url: 'latt_long_ajax.php?indice='+indice, 
+                url: 'latt_long_ajax.php?indice=0',
+                success: function(point) {
+                    var 
+                        longitude = point[1] ;
+                        lattitude = point[0] ;
+                        console.log( longitude );
+                        console.log( lattitude );
+                        console.log( indice );
+
+                        var newLatLng = new L.LatLng(lattitude, longitude);
+                        marker_calene.setLatLng(newLatLng);
+                        if (indice==0) { indice=6;} else  { indice=indice-1;} 
+                    // rappel après 1 seconde
+                    setTimeout(requestDatacalene, 1000);  
+                },
+                cache: false
+            });
+        }
+
+        //----------------------------------------------------------------------------------------------------
+        //-----
+        //-----
+        //-----
+        //----------------------------------------------------------------------------------------------------
+        $('#bouton').click(function() {
+          //requestDatacalene() ;
+        });
+
+        //----------------------------------------------------------------------------------------------------
+        //-----
+        //-----
+        //-----
+        //----------------------------------------------------------------------------------------------------
+        $(document).ready(function() {
+          requestDatacalene() ;
+        });
+
+
+   	var imageicone = '../images/charge.png';
+    var imageflag = '../images/flag.png';
+    var imagecalene =  '../images/calene.png';    
+    var circuit_depart =   {lat: 44.197559, lng: 0.613781};
+    var circuit_virage_1 = {lat: 44.197690, lng: 0.614612};
+    var circuit_virage_2 = {lat: 44.197728, lng: 0.613593};
+
+    var circuit_rond_point = {lat: 48.439885, lng: 1.539996};
+
+    var circuit_calene = {lat: 44.197682, lng: 0.614258};
+    var voiture_calene = {lat: 44.197682, lng: 0.614258};
+    
+    var map = L.map('map' , {
+    	center:circuit_calene,
+    	minZoom: 1,
+    	maxZoom:18,
+    	zoom: 18,
+    	rotation: Math.PI / 3,
+//      dragging: false,
+//      zoomControl: false
+      dragging: true,
+      zoomControl: true
+    	});
+
+//	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: '&copy; <a href="http://v1.association-calene.fr">Calene</a> Lycée JB de BAUDRE - AGEN',
+		    id: 'mapbox.satellite',
+		    accessToken: 'pk.eyJ1IjoibGlvbmVsY2FycmVyZSIsImEiOiJjamh2bXoydzEwMG1xM3BvMGcwbzR3dWFiIn0.pdhQ7Jmj2xeoJA7hiBJC6w'
+		}).addTo(map);
+
+		
+  var marker_calene = L.marker([44.197667, 0.613604], {
+    draggable: true,
+    title: "Voiture Calene",
+    //icon: yellowIcon,
+    icon: caleneIcon,
+    autoPan: false,
+    opacity: 1
+  }).addTo(map);
+  marker_calene.bindPopup("Position de la voiture");
+  
+  var marker_depart = L.marker(circuit_depart, {
+    title: "Départ circuit",
+    icon: greyIcon, 
+  }).addTo(map);
+  marker_depart.bindPopup("Départ de la course");
+  
+  var marker_virage1 = L.marker(circuit_virage_1, {
+    title: "Virage n°1",
+    icon: greyIcon, 
+  }).addTo(map);
+  marker_virage1.bindPopup("Virage n°1");
+  
+  var marker_virage2 = L.marker(circuit_virage_2, {
+    title: "Virage n°2",
+    icon: greyIcon, 
+  }).addTo(map);
+  marker_virage2.bindPopup("Virage n°2");
+  
+	var circle = L.circle([48.439192, 1.542298], {
+    		color: 'red',
+    		fillColor: '#f03',
+    		fillOpacity: 0.5,
+    		radius: 15
+		}).addTo(map);
+	circle.bindPopup("Circuit SolarCup");
+	
+  var popup = L.popup();
+
+  var marker_lire_position = new L.Marker(circuit_calene, {
+    draggable:true, 
+    title: "Double-clic pour lire lattitude et longitude",
+    icon: greenIcon 
+  }).on('dblclick', markerOnClick).addTo(map);
+  marker_lire_position.bindPopup("Drag and drop pour un nouvel emplacement<BR>Double-clic pour lire lattitude et longitude");
+
+  function markerOnClick(e)
+  {
+    alert("Lattitude et longitude : " + e.latlng);
+  }
+
+
+	</script>
+  </body>
+</html

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>CALENE AGEN</title>
+    <meta name="viewport" content="initial-scale=1.0 , user-scalable=no">
+    <meta charset="utf-8">
+    
+	<link rel="stylesheet" href="CALENE%20AGEN_fichiers/leaflet.css">
+
+	<script src="CALENE%20AGEN_fichiers/leaflet.js"> </script>
+	<script src="CALENE%20AGEN_fichiers/jquery-3.js"> </script>
+	
+<!--  <button id="bouton"> Pour des tests</button> -->
+ 
+   
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 90%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+    
+  </head>
+  <body>
+	
+
+  
+    <title>CALENE Menu principal</title>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="CALENE%20AGEN_fichiers/menu.css">
+  
+
+  
+	<ul id="menu">
+	        <li><a href="http://v1.association-calene.fr/index.php">Home</a></li>
+	        <li>
+	                <a href="#">Gestion</a>
+	                <ul>
+	                        <li><a href="http://v1.association-calene.fr/test_js.php">mise à jour dernière valeur</a></li>
+	                        <li><a href="http://v1.association-calene.fr/messages.php">Changer le message au pilote</a></li>
+	                </ul>
+	        </li>
+	        <li>
+	                <a href="#">Affichages instantannés</a>
+	                <ul>
+	                        <li><a href="http://v1.association-calene.fr/vitesse.php">Vitesse</a></li>
+	                        <li><a href="http://v1.association-calene.fr/courant_live.php">Courants</a></li>
+	                        <li><a href="http://v1.association-calene.fr/tension_live.php">Tensions</a></li>
+	                        <li><a href="http://v1.association-calene.fr/tension_courant_live">Courants et tensions</a></li>
+	                </ul>
+	        </li>
+	        <li><a href="#">Graphiques</a>
+	                <ul>
+	                        <li><a href="#">Vitesse</a></li>
+	                        <li><a href="http://v1.association-calene.fr/courant_graph_highstock.php">Courants</a></li>
+	                        <li><a href="#">Tensions</a></li>
+	                </ul>
+			</li>	                
+	        <li>
+	        		<a href="#">Cartes</a>
+	                <ul>
+				        <li><a href="http://v1.association-calene.fr/carte_AGEN.php">Cartes de la piste d'AGEN</a></li>
+				        <li><a href="http://v1.association-calene.fr/carte_CHARTRES.php">Cartes de la course à Chartres</a></li>
+				        <li><a href="http://v1.association-calene.fr/plan.php">Plan du circuit</a></li>
+				        <li><a href="http://v1.association-calene.fr/circuit.php">Mesure du circuit</a></li>
+	                </ul>
+			</li>
+	        <li><a href="http://v1.association-calene.fr/todo.php">Contact</a></li>
+	  </ul>
+	    <div id="map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" style="position: relative; outline: currentcolor none medium;" tabindex="0"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95119_003.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(886px, 63px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95120_007.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(886px, 319px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95119_005.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(630px, 63px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95119_006.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1142px, 63px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95120_008.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(630px, 319px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95120_005.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1142px, 319px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95118_009.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(886px, -193px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95121_005.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(886px, 575px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95118_005.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(630px, -193px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95118_008.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1142px, -193px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95121_008.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(630px, 575px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95121_009.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1142px, 575px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95119_008.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(374px, 63px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95119_004.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1398px, 63px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95120_009.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(374px, 319px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95120_006.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1398px, 319px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95118_006.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(374px, -193px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95118_007.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1398px, -193px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95121_006.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(374px, 575px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95121_007.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1398px, 575px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95119_009.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(118px, 63px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95119_007.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1654px, 63px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95120.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(118px, 319px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95120_004.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1654px, 319px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95118_002.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(118px, -193px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95118_003.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1654px, -193px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95121_002.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(118px, 575px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95121_004.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1654px, 575px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95119.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-138px, 63px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95119_002.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1910px, 63px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95120_003.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-138px, 319px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95120_002.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1910px, 319px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95118_004.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-138px, -193px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95118.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1910px, -193px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95121.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-138px, 575px, 0px); opacity: 1;"><img alt="" role="presentation" src="CALENE%20AGEN_fichiers/95121_003.jpg" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1910px, 575px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"><img src="CALENE%20AGEN_fichiers/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(838px, 395px, 0px);" alt=""><img src="CALENE%20AGEN_fichiers/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(871px, 423px, 0px);" alt=""><img src="CALENE%20AGEN_fichiers/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(1026px, 389px, 0px);" alt=""><img src="CALENE%20AGEN_fichiers/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(836px, 379px, 0px);" alt=""><img src="CALENE%20AGEN_fichiers/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(960px, 391px, 0px);" alt=""></div><div class="leaflet-pane leaflet-overlay-pane"><svg pointer-events="none" class="leaflet-zoom-animated" width="2304" height="938" style="transform: translate3d(-192px, -78px, 0px);" viewBox="-192 -78 2304 938"><g><path class="leaflet-interactive" stroke="red" stroke-opacity="1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="#f03" fill-opacity="0.5" fill-rule="evenodd" d="M0 0"></path></g></svg></div><div class="leaflet-pane leaflet-marker-pane"><img src="CALENE%20AGEN_fichiers/calene.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive leaflet-marker-draggable" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(838px, 395px, 0px); z-index: 395;" title="Voiture Calene" alt="" tabindex="0"><img src="CALENE%20AGEN_fichiers/marker-icon-2x-grey.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(871px, 423px, 0px); z-index: 423;" title="Départ circuit" alt="" tabindex="0"><img src="CALENE%20AGEN_fichiers/marker-icon-2x-grey.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(1026px, 389px, 0px); z-index: 389;" title="Virage n°1" alt="" tabindex="0"><img src="CALENE%20AGEN_fichiers/marker-icon-2x-grey.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(836px, 379px, 0px); z-index: 379;" title="Virage n°2" alt="" tabindex="0"><img src="CALENE%20AGEN_fichiers/marker-icon-2x-green.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive leaflet-marker-draggable" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(960px, 391px, 0px); z-index: 391;" title="Double-clic pour lire lattitude et longitude" alt="" tabindex="0"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in leaflet-disabled" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a> | © <a href="http://v1.association-calene.fr/">Calene</a> Lycée JB de BAUDRE - AGEN</div></div></div></div>
+    <script src="CALENE%20AGEN_fichiers/leaflet-color-markers.js"> </script>
+<!--      // blueIcon  redIcon  greenIcon  orangeIcon  yellowIcon  violetIcon  greyIcon  blackIcon -->
+
+    <script src="CALENE%20AGEN_fichiers/markers.js"> </script>
+
+
+    <script>
+
+      var indice = 0 ;
+
+
+        //-----------------------------------------------------------------------------
+        // récupère la lattitude et la logitude
+        // par une requête ajax sur le fichier latt_long.php
+        // qui retourne une valeur formatée en json
+        // exemple : [[44.4108],[0.3703]]
+        //-----------------------------------------------------------------------------
+        function requestDatacalene() {
+            $.ajax({
+//                url: 'latt_long_ajax.php?indice='+indice, 
+                url: 'latt_long_ajax.php?indice=0',
+                success: function(point) {
+                    var 
+                        longitude = point[1] ;
+                        lattitude = point[0] ;
+                        console.log( longitude );
+                        console.log( lattitude );
+                        console.log( indice );
+
+                        var newLatLng = new L.LatLng(lattitude, longitude);
+                        marker_calene.setLatLng(newLatLng);
+                        if (indice==0) { indice=6;} else  { indice=indice-1;} 
+                    // rappel après 1 seconde
+                    setTimeout(requestDatacalene, 1000);  
+                },
+                cache: false
+            });
+        }
+
+        //----------------------------------------------------------------------------------------------------
+        //-----
+        //-----
+        //-----
+        //----------------------------------------------------------------------------------------------------
+        $('#bouton').click(function() {
+          //requestDatacalene() ;
+        });
+
+        //----------------------------------------------------------------------------------------------------
+        //-----
+        //-----
+        //-----
+        //----------------------------------------------------------------------------------------------------
+        $(document).ready(function() {
+          requestDatacalene() ;
+        });
+
+
+   	var imageicone = '../images/charge.png';
+    var imageflag = '../images/flag.png';
+    var imagecalene =  '../projet/vehicule_1/CALENE%20AGEN_fichiers/calene.png';    
+    var circuit_depart =   {lat: 44.197559, lng: 0.613781};
+    var circuit_virage_1 = {lat: 44.197690, lng: 0.614612};
+    var circuit_virage_2 = {lat: 44.197728, lng: 0.613593};
+
+    var circuit_rond_point = {lat: 48.439885, lng: 1.539996};
+
+    var circuit_calene = {lat: 44.197682, lng: 0.614258};
+    var voiture_calene = {lat: 44.197682, lng: 0.614258};
+    
+    var map = L.map('map' , {
+    	center:circuit_calene,
+    	minZoom: 1,
+    	maxZoom:18,
+    	zoom: 18,
+    	rotation: Math.PI / 3,
+//      dragging: false,
+//      zoomControl: false
+      dragging: true,
+      zoomControl: true
+    	});
+
+//	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: '&copy; <a href="http://v1.association-calene.fr">Calene</a> Lycée JB de BAUDRE - AGEN',
+		    id: 'mapbox.satellite',
+		    accessToken: 'pk.eyJ1IjoibGlvbmVsY2FycmVyZSIsImEiOiJjamh2bXoydzEwMG1xM3BvMGcwbzR3dWFiIn0.pdhQ7Jmj2xeoJA7hiBJC6w'
+		}).addTo(map);
+
+		
+  var marker_calene = L.marker([44.197667, 0.613604], {
+    draggable: true,
+    title: "Voiture Calene",
+    //icon: yellowIcon,
+    icon: caleneIcon,
+    autoPan: false,
+    opacity: 1
+  }).addTo(map);
+  marker_calene.bindPopup("Position de la voiture");
+  
+  var marker_depart = L.marker(circuit_depart, {
+    title: "Départ circuit",
+    icon: greyIcon, 
+  }).addTo(map);
+  marker_depart.bindPopup("Départ de la course");
+  
+  var marker_virage1 = L.marker(circuit_virage_1, {
+    title: "Virage n°1",
+    icon: greyIcon, 
+  }).addTo(map);
+  marker_virage1.bindPopup("Virage n°1");
+  
+  var marker_virage2 = L.marker(circuit_virage_2, {
+    title: "Virage n°2",
+    icon: greyIcon, 
+  }).addTo(map);
+  marker_virage2.bindPopup("Virage n°2");
+  
+	var circle = L.circle([48.439192, 1.542298], {
+    		color: 'red',
+    		fillColor: '#f03',
+    		fillOpacity: 0.5,
+    		radius: 15
+		}).addTo(map);
+	circle.bindPopup("Circuit SolarCup");
+	
+  var popup = L.popup();
+
+  var marker_lire_position = new L.Marker(circuit_calene, {
+    draggable:true, 
+    title: "Double-clic pour lire lattitude et longitude",
+    icon: greenIcon 
+  }).on('dblclick', markerOnClick).addTo(map);
+  marker_lire_position.bindPopup("Drag and drop pour un nouvel emplacement<BR>Double-clic pour lire lattitude et longitude");
+
+  function markerOnClick(e)
+  {
+    alert("Lattitude et longitude : " + e.latlng);
+  }
+
+
+	</script>
+  
+</body></html>
