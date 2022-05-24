@@ -1,9 +1,9 @@
 <?php
-//connection à la base de données Calene
+//connection à la base de données Projet_BTS
 	include "connexion.php";
 header("Content-type: text/json");
-//Récupération de la dernière valeur enregistrée dans les champs Temps, Tension_1 et Tension_2 de la table voiture 2
-	$requete = 'SELECT Temps, Tension_1, Tension_2 FROM voiture2 ORDER BY ID_Voiture DESC LIMIT 0,1' ;
+//Récupération de la dernière valeur enregistrée dans les champs Time, Volt_1 et Volt_2 de la table vehicule 2
+	$requete = 'SELECT Time, Volt_1, Volt_2 FROM vehicule2 ORDER BY ID_Vehi DESC LIMIT 0,1' ;
 	$reponse = $bdd->query($requete);
 	while ( $donnees = $reponse->fetch() ) {
 		echo "[" ;
