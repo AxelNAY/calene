@@ -14,7 +14,7 @@
     <title>CALENE AGEN</title>
     <meta name="viewport" content="initial-scale=1.0 , user-scalable=no">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/menu.css"/>
+    <link rel="stylesheet" href="../css/menu2.css"/>
 	<link rel="stylesheet" href="../CALENE_AGEN_fichiers/leaflet.css"/>
 	<script src="../CALENE_AGEN_fichiers/leaflet.js"> </script>
 	<script src="../CALENE_AGEN_fichiers/jquery-3.2.1.js"> </script>
