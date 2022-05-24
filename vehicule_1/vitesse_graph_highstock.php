@@ -188,18 +188,18 @@ background-color: #6699CC;
 			            }]
 					},
 			        series: [{
-				            name: 'Vitesse',
+				            name: 'Speed',
 				            color: 'green',
 				            <?php
-							$reponse = $bdd->query('SELECT Temps, Vitesse FROM voiture1');
+							$reponse = $bdd->query('SELECT Time, Speed FROM vehicule1');
 							$nombre_enregistrement = $reponse->rowCount() ;
 							$compteur = 1 ;
 							echo "data: [";
 							while ($donnees = $reponse->fetch())
 							{
-								$v = $donnees[Vitesse] ;
+								$v = $donnees[Speed] ;
 								$v = $v * 3.6;
-								$t = strtotime($donnees[Temps]) + 7200;
+								$t = strtotime($donnees[Time]) + 7200;
 								$vt = "[".$t."000, $v]";
 								echo $vt;
 								if ($compteur < $nombre_enregistrement)
