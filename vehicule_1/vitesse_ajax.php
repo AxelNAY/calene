@@ -1,5 +1,5 @@
 <?php
-//connection à la base de données Calene
+//connection à la base de données Projet_BTS
 	include "connexion.php";
 //Récupération de la dernière valeur enregistrée dans le champ Speed de la table vehicule 1
 header("Content-type: text/json");
