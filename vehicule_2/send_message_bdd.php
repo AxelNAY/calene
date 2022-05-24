@@ -1,7 +1,7 @@
 <?php
 try
 {
-$bdd = new PDO('mysql:host=cprp.lolacie.fr;dbname=cprp;charset=utf8', 'etudiant.cprp', 'etudiant47');
+$bdd = new PDO('mysql:host=localhost;dbname=Projet_BTS;charset=utf8', 'identifiant', 'motdepasse');
 }
 catch (Exception $e)
 {
@@ -12,7 +12,7 @@ die('Erreur : ' . $e->getMessage());
 header("Content-type: text/json");
 
 $message = $_POST['le_message'];
-$requete = "INSERT INTO Message FROM voiture_1 VALUES ('$message')";
+$requete = "INSERT INTO Message FROM vehicule2 VALUES ('$message')";
 $resultat = mysql_query($requete);
 
 /**/
