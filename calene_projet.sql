@@ -17,23 +17,23 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données :  `calene projet`
+-- Base de données :  `Projet_BTS`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `voiture 1`
+-- Structure de la table `vehicule 1`
 --
 
-CREATE TABLE IF NOT EXISTS `voiture 1` (
+CREATE TABLE IF NOT EXISTS `vehicule 1` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Vitesse` float NOT NULL,
-  `Tension` float NOT NULL,
-  `Courant` float NOT NULL,
-  `Longitude` double NOT NULL,
-  `Latitude` double NOT NULL,
-  `TEMPS` datetime NOT NULL,
+  `Speed` float NOT NULL,
+  `Volt` float NOT NULL,
+  `Amp` float NOT NULL,
+  `Long` double NOT NULL,
+  `Lat` double NOT NULL,
+  `Time` datetime NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -45,12 +45,12 @@ CREATE TABLE IF NOT EXISTS `voiture 1` (
 
 CREATE TABLE IF NOT EXISTS `voiture 2` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Vitesse` float NOT NULL,
-  `Tension` float NOT NULL,
-  `Courant` float NOT NULL,
-  `Longitude` double NOT NULL,
-  `Latitude` double NOT NULL,
-  `TEMPS` datetime NOT NULL,
+  `Speed` float NOT NULL,
+  `Volt` float NOT NULL,
+  `Amp` float NOT NULL,
+  `Long` double NOT NULL,
+  `Lat` double NOT NULL,
+  `Time` datetime NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
