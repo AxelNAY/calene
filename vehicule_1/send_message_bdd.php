@@ -12,7 +12,7 @@ die('Erreur : ' . $e->getMessage());
 header("Content-type: text/json");
 
 $message = $_POST['le_message'];
-$requete = "INSERT INTO Message FROM vehicule_1 VALUES ('$message')";
+$requete = "INSERT INTO Message FROM vehicule1 VALUES ('$message')";
 $resultat = mysql_query($requete);
 
 /**/
