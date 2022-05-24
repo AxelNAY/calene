@@ -191,7 +191,7 @@ background-color: #6699CC;
 			            }]
 			        },
 			        series: [{
-				            name: 'Volt 1',
+				            name: 'Tension 1',
 				            color: 'green',
 							<?php
 							$reponse = $bdd->query('SELECT Time, Volt_1, Volt_2 FROM vehicule1');
@@ -224,7 +224,7 @@ background-color: #6699CC;
 				                valueDecimals: 3
 			            	}
 			            },{	
-				            name: 'Volt 2',
+				            name: 'Tension 2',
 				            color: 'black',
 				            <?php
 							$reponse = $bdd->query('SELECT Time, Volt_1, Volt_2 FROM vehicule1');
