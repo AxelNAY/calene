@@ -3,12 +3,12 @@ $message = $_POST['comments'];
 //echo $message ;
 //echo "<BR>" ;
 $message = str_replace("'", "\'", $message);
-//connection à la base de données Calene
+//connection à la base de données Projet_BTS
 include "connexion.php";
 
 
-	$requete = 'SELECT * FROM voiture2 ORDER BY ID_Voiture DESC LIMIT 0,1 ;' ;
-	//$requete = "SELECT * FROM voiture2 ;" ;
+	$requete = 'SELECT * FROM vehicule2 ORDER BY ID_Vehi DESC LIMIT 0,1 ;' ;
+	//$requete = "SELECT * FROM vehicule2 ;" ;
 //	echo $requete ;
 //	echo "<BR>" ;
 	$resultat = $bdd->query($requete);
@@ -43,7 +43,8 @@ include "connexion.php";
 /**/
 
 
-$requete1 = "INSERT INTO voiture2 (Commentaire, Courant_1, Courant_2, Tension_1, Tension_2, Vitesse, Latitude, Longitude) VALUES ('$message','$result[3]', '$result[4]','$result[5]','$result[6]','$result[7]','$result[8]','$result[9]')";
+$requete1 = "INSERT INTO vehicule2 (Message, Amp_1, Amp_2, Volt_1, Volt_2, Speed, Lat, Long)
+VALUES ('$message','$result[3]', '$result[4]','$result[5]','$result[6]','$result[7]','$result[8]','$result[9]')";
 //echo $requete1 ;
 //echo "<BR>" ;
 $resultat = $bdd->query($requete1);
