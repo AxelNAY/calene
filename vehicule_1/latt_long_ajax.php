@@ -1,5 +1,5 @@
 <?php
-//connection à la base de données calene
+//connection à la base de données Projet_BTS
 	include "connexion.php";
 // Set the JSON header
 header("Content-type: text/json");
