@@ -2,7 +2,7 @@
 if (isset($_GET['type'])) {	$type = $_GET['type']; } //récupération de l'unité permettant de choisir le champ
 if (isset($_GET['indice'])) { $indice = $_GET['indice']; } //récupération de l'indice permettant de choisir le champ
 if (isset($_GET['valeur'])) { $valeur = $_GET['valeur']; } //récupération de la valeur
-//connection à la base de données calene
+//connection à la base de données Projet_BTS
 	include "connexion.php";
 	$requete = 'SELECT * FROM vehicule1 ORDER BY ID_Vehi DESC LIMIT 0,1 ;' ;
 	$resultat = $bdd->query($requete);
