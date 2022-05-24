@@ -4,7 +4,7 @@
 // Set the JSON header
 header("Content-type: text/json");
 
-	$reponse = $bdd->query('SELECT Latitude, Longitude FROM voiture1 ORDER BY ID_Voiture DESC LIMIT 0,1');
+	$reponse = $bdd->query('SELECT Lat, Long FROM vehicule1 ORDER BY ID_Vehi DESC LIMIT 0,1');
 	while ( $donnees = $reponse->fetch() ) {
 		echo "[" ;
 		echo $donnees['0'] ;
