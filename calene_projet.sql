@@ -40,10 +40,10 @@ CREATE TABLE IF NOT EXISTS `vehicule 1` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `voiture 2`
+-- Structure de la table `vehicule 2`
 --
 
-CREATE TABLE IF NOT EXISTS `voiture 2` (
+CREATE TABLE IF NOT EXISTS `vehicule 2` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Speed` float NOT NULL,
   `Volt` float NOT NULL,
