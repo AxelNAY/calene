@@ -27,7 +27,7 @@ background-color: #6699CC;
 		<?php
 		//ajout du menu
 		include "menu.html";
-		//connection à la base de données calene
+		//connection à la base de données Projet_BTS
 		include "connexion.php";
 		?>
 		<script type="text/javascript" src="../jquery/jquery-1.10.1.js"></script>
@@ -40,8 +40,8 @@ background-color: #6699CC;
 		var chart ;
 		var oldpoint = 1563490482000 ; // global
 	    //fonction d'appeler le fichier courant_ajax_dernier_point.php permettant
-		//de récupérer les dernières valeurs entrées dans les champs Courant_1, Courant_2 et Temps
-	    //et d'ajouter un nouveau point si la variable du champ Temps est différente
+		//de récupérer les dernières valeurs entrées dans les champs Amp_1, Amp_2 et Time
+	    //et d'ajouter un nouveau point si la variable du champ Time est différente
 	    //de la variable oldpoint
 		function requestData() {
 			$.ajax({
@@ -56,7 +56,7 @@ background-color: #6699CC;
 						//qui permet de les affichés sur le graphique
 						chart.series[0].addPoint(point_courant1, true, false); /* */
 						chart.series[1].addPoint(point_courant2, true, false); /* */
-						//attribution de la valeur du champ Temps à la varible oldpoint
+						//attribution de la valeur du champ Time à la varible oldpoint
 						oldpoint = point[0] ;
 					}
 					// rappel après 1 seconde
