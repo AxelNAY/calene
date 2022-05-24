@@ -27,7 +27,7 @@ background-color: #6699CC;
 		<?php
 		//ajout du menu
 		include "menu.html";
-		//connection à la base de données calene
+		//connection à la base de données Projet_BTS
 		include "connexion.php";
 		?>
 		<script type="text/javascript" src="../jquery/jquery-1.10.1.js"></script>
@@ -39,8 +39,8 @@ background-color: #6699CC;
 		var chart ;
 		var oldpoint = 1563490482000 ;
 	    //fonction d'appeler le fichier vitesse_ajax_dernier_point.php permettant
-		//de récupérer les dernières valeurs entrées dans les champs Vitesse et Temps
-	    //et d'ajouter un nouveau point si la variable du champ Temps est différente
+		//de récupérer les dernières valeurs entrées dans les champs Speed et Time
+	    //et d'ajouter un nouveau point si la variable du champ Time est différente
 	    //de la variable oldpoint
 		function requestData() {
 			$.ajax({
@@ -53,7 +53,7 @@ background-color: #6699CC;
 						//attribution de la vitesse à une série
 						//qui permet de les affichés sur le graphique
 						chart.series[0].addPoint(point_vitesse, true, false);
-						//attribution de la valeur du champ Temps à la varible oldpoint
+						//attribution de la valeur du champ Time à la varible oldpoint
 						oldpoint = point[0] ;
 					}
 					// rappel après 1 seconde
@@ -191,15 +191,15 @@ background-color: #6699CC;
 				            name: 'Vitesse',
 				            color: 'green',
 				            <?php
-							$reponse = $bdd->query('SELECT Temps, Vitesse FROM voiture2');
+							$reponse = $bdd->query('SELECT Time, Speed FROM vehicule2');
 							$nombre_enregistrement = $reponse->rowCount() ;
 							$compteur = 1 ;
 							echo "data: [";
 							while ($donnees = $reponse->fetch())
 							{
-								$v = $donnees[Vitesse] ;
+								$v = $donnees[Speed] ;
 								$v = $v * 3.6;
-								$t = strtotime($donnees[Temps]) + 7200;
+								$t = strtotime($donnees[Time]) + 7200;
 								$vt = "[".$t."000, $v]";
 								echo $vt;
 								if ($compteur < $nombre_enregistrement)
