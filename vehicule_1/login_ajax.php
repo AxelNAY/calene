@@ -3,7 +3,7 @@
 	include "connexion.php";
 	$user = $_POST['username'] ;
 	$password = $_POST['password'] ;
-	$requete = "SELECT * FROM Authentification WHERE login='".$user."' AND mdp='".$password."'" ; 
+	$requete = "SELECT * FROM Autorisation WHERE utilisateur='".$user."' AND motdepasse='".$password."'" ; 
 	$resultat = $bdd->query($requete);
 	$compteur = $resultat->rowCount() ; // on compte le nombre de résultat à notre requete : 1 si ok sinon 0
 	if ($compteur == 1)
