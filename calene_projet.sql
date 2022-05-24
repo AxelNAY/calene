@@ -26,8 +26,8 @@ SET time_zone = "+00:00";
 -- Structure de la table `vehicule 1`
 --
 
-CREATE TABLE IF NOT EXISTS `vehicule 1` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `vehicule1` (
+  `ID_Vehi` int(11) NOT NULL AUTO_INCREMENT,
   `Speed` float NOT NULL,
   `Volt` float NOT NULL,
   `Amp` float NOT NULL,
@@ -43,8 +43,8 @@ CREATE TABLE IF NOT EXISTS `vehicule 1` (
 -- Structure de la table `vehicule 2`
 --
 
-CREATE TABLE IF NOT EXISTS `vehicule 2` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `vehicule2` (
+  `ID_Vehi` int(11) NOT NULL AUTO_INCREMENT,
   `Speed` float NOT NULL,
   `Volt` float NOT NULL,
   `Amp` float NOT NULL,
