@@ -1,10 +1,10 @@
 <?php
-//connection à la base de données calene
+//connection à la base de données Projet_BTS
 	include "connexion.php";
 	
 	$user = $_POST['username'] ;
 	$password = $_POST['password'] ;
-	$requete = "SELECT * FROM Authentification WHERE login='".$user."' AND mdp='".$password."'" ; 
+	$requete = "SELECT * FROM Autorisation WHERE user='".$user."' AND motdepasse='".$password."'" ; 
 	//echo $requete ;
 	$resultat = $bdd->query($requete);
 	//var_dump($resultat) ;
