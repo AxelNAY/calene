@@ -191,18 +191,18 @@ background-color: #6699CC;
 			            }]
 			        },
 			        series: [{
-				            name: 'Tension 1',
+				            name: 'Volt 1',
 				            color: 'green',
 							<?php
-							$reponse = $bdd->query('SELECT Temps, Tension_1, Tension_2 FROM voiture1');
+							$reponse = $bdd->query('SELECT Time, Volt_1, Volt_2 FROM vehicule1');
 							$nombre_enregistrement = $reponse->rowCount() ;
 							$compteur = 1 ;
 							echo "data: [";
 							while ($donnees = $reponse->fetch())
 							{
-								$u1 = $donnees[Tension_1] ;
+								$u1 = $donnees[Volt_1] ;
 								$u1 = $u1 / 10;
-								$t = strtotime($donnees[Temps]) + 7200;
+								$t = strtotime($donnees[Time]) + 7200;
 								$ut1 = "[".$t."000, $u1]";
 								echo $ut1;
 								if ($compteur < $nombre_enregistrement)
@@ -224,18 +224,18 @@ background-color: #6699CC;
 				                valueDecimals: 3
 			            	}
 			            },{	
-				            name: 'Tension 2',
+				            name: 'Volt 2',
 				            color: 'black',
 				            <?php
-							$reponse = $bdd->query('SELECT Temps, Tension_1, Tension_2 FROM voiture1');
+							$reponse = $bdd->query('SELECT Time, Volt_1, Volt_2 FROM vehicule1');
 							$nombre_enregistrement = $reponse->rowCount() ;
 							$compteur = 1 ;
 							echo "data: [";
 							while ($donnees = $reponse->fetch())
 							{
-								$u2 = $donnees[Tension_2] ;
+								$u2 = $donnees[Volt_2] ;
 								$u2 = $u2 / 10;
-								$t = strtotime($donnees[Temps]) + 7200;
+								$t = strtotime($donnees[Time]) + 7200;
 								$ut2 = "[".$t."000, $u2]";
 								echo $ut2;
 								if ($compteur < $nombre_enregistrement)
