@@ -2,8 +2,8 @@
 //connection à la base de données Calene
 	include "connexion.php";
 	header("Content-type: text/json");
-//Récupération de la dernière valeur enregistrée dans les champs Temps, Courant_1 et Courant_2 de la table voiture 1
-	$requete = 'SELECT Temps, Courant_1, Courant_2 FROM voiture1 ORDER BY ID_Voiture DESC LIMIT 0,1' ;
+//Récupération de la dernière valeur enregistrée dans les champs Time, Amp_1 et Amp_2 de la table vehicule 1
+	$requete = 'SELECT Time, Amp_1, Amp_2 FROM vehicule1 ORDER BY ID_Vehi DESC LIMIT 0,1' ;
 //	echo $requete ;
 	$reponse = $bdd->query($requete);
 	while ( $donnees = $reponse->fetch() ) {
