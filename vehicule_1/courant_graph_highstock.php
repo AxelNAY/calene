@@ -56,7 +56,7 @@ background-color: #6699CC;
 						//qui permet de les affichés sur le graphique
 						chart.series[0].addPoint(point_courant1, true, false); /* */
 						chart.series[1].addPoint(point_courant2, true, false); /* */
-						//attribution de la valeur du champ Temps à la varible oldpoint
+						//attribution de la valeur du champ Time à la varible oldpoint
 						oldpoint = point[0] ;
 					}
 					// rappel après 1 seconde
