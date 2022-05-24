@@ -194,19 +194,19 @@ background-color: #6699CC;
 				            name: 'Courant 1',
 				            color: 'green',
 							<?php
-							$reponse = $bdd->query('SELECT Temps, Courant_1, Courant_2 FROM voiture1');
+							$reponse = $bdd->query('SELECT Time, Amp_1, Amp_2 FROM vehicule1');
 							$nombre_enregistrement = $reponse->rowCount() ;
 							$compteur = 1 ;
 							echo "data: [";
 							while ($donnees = $reponse->fetch())
 							{
-								$i1 = $donnees[Courant_1];
+								$i1 = $donnees[Amp_1];
 								if ($i1 > 32767)
 								{
 									$i1 = $i1 - 65536;
 								}
 								$i1 = $i1 / 1024 ;
-								$t = strtotime($donnees[Temps]) + 7200;
+								$t = strtotime($donnees[Time]) + 7200;
 								$it1 = "[".$t."000, $i1]";
 								echo $it1;
 								if ($compteur < $nombre_enregistrement)
@@ -231,19 +231,19 @@ background-color: #6699CC;
 				            name: 'Courant 2',
 				            color: 'black',
 				            <?php
-							$reponse = $bdd->query('SELECT Temps, Courant_1, Courant_2 FROM voiture1');
+							$reponse = $bdd->query('SELECT Time, Amp_1, Amp_2 FROM vehicule1');
 							$nombre_enregistrement = $reponse->rowCount() ;
 							$compteur = 1 ;
 							echo "data: [";
 							while ($donnees = $reponse->fetch())
 							{
-								$i2 = $donnees[Courant_2];
+								$i2 = $donnees[Amp_2];
 								if ($i2 > 32767)
 								{
 									$i2 = $i2 - 65536;
 								}
 								$i2 = $i2 / 1024 ;
-								$t = strtotime($donnees[Temps]) + 7200;
+								$t = strtotime($donnees[Time]) + 7200;
 								$it2 = "[".$t."000, $i2]";
 								echo $it2;
 								if ($compteur < $nombre_enregistrement)
